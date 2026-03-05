@@ -8,7 +8,8 @@
     "accentColor": "#6d8715",
     "textColor": "#242b1d",
     "navTxtStyle": "black",
-    "bgTxtStyle": "light"
+    "bgTxtStyle": "light",
+    "navBgColor": "#dbdde1"
   },
   "dark": {
     "bgColor": "#0b1120",
@@ -19,6 +20,7 @@
     "accentColor": "#495867",
     "textColor": "#6fffe9",
     "navTxtStyle": "white",
-    "bgTxtStyle": "dark"
+    "bgTxtStyle": "dark",
+    "navBgColor": "#1f2933"
   }
 }
