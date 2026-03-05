@@ -1,21 +1,62 @@
-const appData = require('../../data/plans.js');
+Here's your complete pages/index/index.wxml with elegant skeleton loading:
 
-Page({
-  data: {
-    planTitle: '',
-    day: null
-  },
-  onLoad(options) {
-    const { planId, dayId } = options;
-    const plan = appData.plans.find(p => p.id === planId);
-    const day = plan.days.find(d => d.id === dayId);
-    this.setData({ planTitle: plan.title, day });
-    wx.setNavigationBarTitle({ title: day.title });
-  },
-  onNoteTap(e) {
-    const url = e.currentTarget.dataset.url;
-    if (url && url.startsWith('http')) {
-      wx.setClipboardData({ data: url }); // optional, or wx.openEmbeddedMiniProgram if needed
-    }
-  }
-});
+xml
+<!-- pages/index/index.wxml -->
+<view class="container">
+  <!-- Header -->
+  <view class="page-header">
+    <view class="title">我的旅行計劃</view>
+    <view class="subtitle">Tap to explore your trips</view>
+  </view>
+
+  <!-- Skeleton Loading -->
+  <view wx:if="{{loading}}" class="skeleton-container">
+    <!-- Fake plan cards (3 for realistic effect) -->
+    <view class="skeleton-card">
+      <view class="skeleton-title"></view>
+      <view class="skeleton-line skeleton-line-1"></view>
+      <view class="skeleton-line skeleton-line-2"></view>
+    </view>
+    <view class="skeleton-card">
+      <view class="skeleton-title"></view>
+      <view class="skeleton-line skeleton-line-1"></view>
+      <view class="skeleton-line skeleton-line-2"></view>
+    </view>
+    <view class="skeleton-card">
+      <view class="skeleton-title"></view>
+      <view class="skeleton-line skeleton-line-1"></view>
+      <view class="skeleton-line skeleton-line-2"></view>
+    </view>
+  </view>
+
+  <!-- Real content -->
+  <view wx:else class="plans-container">
+    <view class="weui-form-preview plan-card" 
+          wx:for="{{plans}}" 
+          wx:key="id" 
+          bindtap="goToPlan" 
+          data-id="{{item.id}}">
+      <view class="weui-form-preview__hd">
+        <view class="plan-icon">{{item.title.charAt(0)}}</view>
+      </view>
+      <view class="weui-form-preview__bd">
+        <view class="plan-title">{{item.title}}</view>
+        <view class="plan-cities">{{item.cities.join(' / ')}}</view>
+        <view class="plan-dates">
+          {{item.startDate}} - {{item.endDate}} 
+          <text class="duration">({{item.durationDays}}天)</text>
+        </view>
+      </view>
+      <view class="weui-form-preview__ft">
+        <text class="arrow">›</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Empty state -->
+  <view wx:elif="{{!loading && plans.length === 0}}" class="empty-state">
+    <image src="/images/empty-travel.png" class="empty-icon" />
+    <view class="empty-text">還沒有旅行計劃</view>
+    <view class="empty-subtext">新增 LocalData/TravelPlan/*.json 即可自動顯示</view>
+  </empty-state>
+</view>

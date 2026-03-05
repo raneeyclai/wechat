@@ -59,5 +59,13 @@ Page({
         }
       });
     }
-  }
+  },
+
+  showPhotoModal(e) {
+  const index = e.currentTarget.dataset.index;
+  wx.previewImage({
+    current: this.data.day.activities[index].photos[0],
+    urls: this.data.day.activities[index].photos
+  });
+}
 });
