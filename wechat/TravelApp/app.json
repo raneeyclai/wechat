@@ -9,6 +9,6 @@
   "window": {
     "navigationBarBackgroundColor": "@navBgColor",
     "navigationBarTextStyle": "@navTxtStyle",
-    "backgroundTextStyle": "@bgTextStyle"
+    "backgroundTextStyle": "@bgTxtStyle"
   }
 }
