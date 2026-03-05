@@ -1,1 +1,53 @@
-@import url('https://res.wx.qq.com/open/libs/weui/0.6.0/weui.wxss');
+@import 'https://res.wx.qq.com/open/libs/weui/0.6.0/weui.wxss';
+
+/* Light theme - your green/gray palette */
+.page {
+  background: linear-gradient(135deg, @bgColorTop 0%, @bgColorBottom 100%);
+  color: @textColor;
+  min-height: 100vh;
+}
+
+.note-card {
+  background: rgba(255,255,255,0.95);
+  border: 1px solid @bgColorTop;
+}
+
+.activity-header {
+  background: rgba(255,255,255,0.8);
+  border-bottom: 1rpx solid @secondaryColor;
+}
+
+/* Dark theme - your cyan/dark palette */
+@media (prefers-color-scheme: dark) {
+  .page {
+    background: linear-gradient(135deg, @bgColorTop 0%, @bgColor 100%);
+    color: @textColor;
+  }
+
+  .note-card {
+    background: rgba(31,41,51,0.95);
+    border: 1rpx solid @accentColor;
+    color: @textColor;
+  }
+
+  .activity-header {
+    background: rgba(11,17,32,0.9);
+    border-bottom: 1rpx solid @secondaryColor;
+  }
+}
+
+/* Consistent across themes */
+.activity-toggle {
+  color: @primaryColor;
+  font-weight: bold;
+  font-size: 36rpx;
+}
+
+.note-title {
+  color: @secondaryColor;
+  font-weight: bold;
+}
+
+.photo {
+  border: 2rpx solid @accentColor;
+}

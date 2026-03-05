@@ -4,7 +4,11 @@
     "pages/plan/plan",
     "pages/day/day"
   ],
+  "darkmode": true,
+  "themeLocation": "theme.json",
   "window": {
-    "navigationBarTitleText": "Travel Planner"
+    "navigationBarBackgroundColor": "@navBgColor",
+    "navigationBarTextStyle": "@navTxtStyle",
+    "backgroundTextStyle": "@bgTextStyle"
   }
 }

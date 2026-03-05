@@ -44,5 +44,15 @@ Page({
     wx.navigateTo({
       url: `/pages/plan/plan?id=${planId}`
     });
+  },
+
+  onThemeToggle() {
+  const systemInfo = wx.getSystemInfoSync();
+  const isDark = systemInfo.theme === 'dark';
+  
+  wx.setNavigationBarColor({
+    frontColor: isDark ? '#ffffff' : '#000000',
+    backgroundColor: isDark ? '#1a1a1a' : '#ffffff'
+  });
   }
 });
