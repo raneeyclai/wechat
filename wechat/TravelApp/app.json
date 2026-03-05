@@ -1,0 +1,10 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/plan/plan",
+    "pages/day/day"
+  ],
+  "window": {
+    "navigationBarTitleText": "Travel Planner"
+  }
+}

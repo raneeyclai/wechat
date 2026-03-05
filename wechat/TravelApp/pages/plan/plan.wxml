@@ -1,0 +1,20 @@
+<!-- pages/plan/plan.wxml -->
+<view class="container" wx:if="{{plan}}">
+  <view class="plan-header">
+    <text class="plan-title">{{plan.title}}</text>
+    <text class="plan-subtitle">
+      {{plan.cities.join(' / ')}} · {{plan.startDate}} – {{plan.endDate}}
+    </text>
+  </view>
+
+  <block wx:for="{{plan.days}}" wx:key="id">
+    <view class="day-card" bindtap="goToDay" data-day-id="{{item.id}}">
+      <view class="day-title">
+        Day {{index + 1}} · {{item.date}}
+      </view>
+      <view class="day-summary">
+        {{item.title}}
+      </view>
+    </view>
+  </block>
+</view>

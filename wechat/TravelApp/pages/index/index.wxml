@@ -1,0 +1,21 @@
+const appData = require('../../data/plans.js');
+
+Page({
+  data: {
+    planTitle: '',
+    day: null
+  },
+  onLoad(options) {
+    const { planId, dayId } = options;
+    const plan = appData.plans.find(p => p.id === planId);
+    const day = plan.days.find(d => d.id === dayId);
+    this.setData({ planTitle: plan.title, day });
+    wx.setNavigationBarTitle({ title: day.title });
+  },
+  onNoteTap(e) {
+    const url = e.currentTarget.dataset.url;
+    if (url && url.startsWith('http')) {
+      wx.setClipboardData({ data: url }); // optional, or wx.openEmbeddedMiniProgram if needed
+    }
+  }
+});

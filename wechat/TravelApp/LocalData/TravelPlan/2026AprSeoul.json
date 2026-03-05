@@ -1,0 +1,50 @@
+{
+  "id": "2026-apr-seoul",
+  "title": "2026 Apr Seoul",
+  "cities": ["Seoul"],
+  "startDate": "2026-04-01",
+  "endDate": "2026-04-07",
+  "summary": "Seoul & Jeju - 櫻花季",
+  "days": [
+    {
+      "id": "day1",
+      "date": "2026-04-01",
+      "title": "到埗 & 聖水逛街 & 江南酒吧",
+      "activities": [
+        {
+          "time": "0715–1150",
+          "name": "HKG > Incheon",
+          "notes": [
+            {
+              "title": "航班編號",
+              "content": "UO618"
+            },
+            {
+              "title": "航空公司",
+              "content": "HK Express"
+            },
+            {
+              "title": "客運大樓",
+              "content": "HKG T1 > ICN T1"
+            }
+          ]
+        },
+        {
+          "time": "1250 - 1400",
+          "name": "機場巴士6013",
+          "notes": [
+            {
+              "title": "上車地點",
+              "content": "Terminal 1: 1st floor, Platform 6A (arrival level, outside)\nTerminal 2: B1 Transportation Center, Platform 24 (basement level)"
+            },
+            {
+              "title": "Adult one-way",
+              "content": "₩17,000 KRW\nPay at ticket counters or machines near the platforms, or buy online vouchers to exchange."
+            }
+          ],
+          "photos": []
+        }
+      ]
+    }
+  ]
+}
